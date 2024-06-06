@@ -1,4 +1,4 @@
-let images = [
+const images = [
   "./assets/bees.jpg",
   "./assets/bridge.jpg",
   "./assets/butterfly.jpg",
@@ -18,7 +18,7 @@ let images = [
   "./assets/tiger.jpg",
   "./assets/turtle.jpg",
 ];
-let titles = [
+const titles = [
   "determination",
   "success",
   "inspiration",
@@ -55,7 +55,7 @@ let titles = [
   "understanding",
   "wisdom",
 ];
-let quotes = [
+const quotes = [
   "Don’t downgrade your dream just to fit your reality, upgrade your conviction to match your destiny.",
   "You are braver than you believe, stronger than you seem and smarter than you think.",
   "You are confined only by the walls you build yourself.",
