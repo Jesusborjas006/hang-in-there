@@ -7,7 +7,14 @@ const getRandomNumber = (arr: string[]) => {
 const Home = () => {
   return (
     <main>
-      <h1>Trust</h1>
+      <img
+        src={"src/" + images[getRandomNumber(images)]}
+        alt="Random Picture"
+      />
+      <h1 className="text-4xl font-semibold font-serif">
+        {titles[getRandomNumber(titles)]}
+      </h1>
+      <p>{quotes[getRandomNumber(quotes)]}</p>
     </main>
   );
 };
