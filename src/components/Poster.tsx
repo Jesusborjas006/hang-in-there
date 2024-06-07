@@ -1,28 +1,24 @@
-import { useState } from "react";
 import { images, titles, quotes } from "../data";
-import { getRandomNumber } from "../utils";
 
-const Poster = () => {
-  const [imageIndex, setImageIndex] = useState(getRandomNumber(images));
-  const [titlesIndex, setTitlesIndex] = useState(getRandomNumber(titles));
-  const [quotesIndex, setQuotesIndex] = useState(getRandomNumber(quotes));
+interface PosterProps {
+  imageIndex: number;
+  titlesIndex: number;
+  quotesIndex: number;
+}
 
-  const handleRandomPoster = () => {
-    setImageIndex(getRandomNumber(images));
-    setTitlesIndex(getRandomNumber(titles));
-    setQuotesIndex(getRandomNumber(quotes));
-  };
-
+const Poster = ({ imageIndex, titlesIndex, quotesIndex }: PosterProps) => {
   return (
-    <section>
-      <img src={"src/" + images[imageIndex]} alt="Random Picture" />
-      <h1 className="text-4xl font-semibold font-serif">
+    <div className="bg-black text-white border w-[70%] mx-auto py-10 mt-10">
+      <img
+        className="w-[80%] max-h-[420px] object-cover mx-auto border-white border-2"
+        src={"src/" + images[imageIndex]}
+        alt="Random Picture"
+      />
+      <h1 className="text-5xl font-semibold mt-4 uppercase">
         {titles[titlesIndex]}
       </h1>
-      <p>{quotes[quotesIndex]}</p>
-
-      <button onClick={handleRandomPoster}>Show Random Poster</button>
-    </section>
+      <p className="mt-4">{quotes[quotesIndex]}</p>
+    </div>
   );
 };
 
