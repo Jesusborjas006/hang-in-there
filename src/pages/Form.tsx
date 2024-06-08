@@ -1,5 +1,20 @@
+import { useNavigate } from "react-router-dom";
+
 const Form = () => {
-  return <h2>Form Page</h2>;
+  const navigate = useNavigate();
+
+  return (
+    <section>
+      <h3>Create your owm motivational poster</h3>
+
+      <button
+        onClick={() => navigate(-1)}
+        className="bg-black text-white py-2 px-4 rounded-md"
+      >
+        Nevermind, take me back!
+      </button>
+    </section>
+  );
 };
 
 export default Form;
