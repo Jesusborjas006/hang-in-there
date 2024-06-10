@@ -1,7 +1,9 @@
 import { MouseEvent, useState } from "react";
 import { Poster } from "../types";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
+  const navigate = useNavigate();
   const [posters, setPosters] = useState([
     {
       id: 1,
@@ -15,6 +17,7 @@ const Form = () => {
     title: "",
     quote: "",
   });
+  console.log(posters);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPoster({ ...poster, [e.target.name]: e.target.value });
@@ -39,6 +42,7 @@ const Form = () => {
 
       addPoster(newPoster);
       setPoster({ ...poster, imgUrl: "", title: "", quote: "" });
+      navigate("/");
     }
   };
 

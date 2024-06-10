@@ -1,28 +1,32 @@
 import { useState } from "react";
 import Poster from "../components/Poster";
 import { getRandomNumber } from "../utils";
-import { images, titles, quotes } from "../data";
 import PosterNavigation from "../components/PosterNavigation";
+import { imagesData, quotesData, titlesData } from "../data";
 
 const Home = () => {
-  const [imageIndex, setImageIndex] = useState(getRandomNumber(images));
-  const [titlesIndex, setTitlesIndex] = useState(getRandomNumber(titles));
-  const [quotesIndex, setQuotesIndex] = useState(getRandomNumber(quotes));
+  const [images, setImages] = useState<string[]>(imagesData);
+  const [titles, setTitles] = useState<string[]>(titlesData);
+  const [quotes, setQuotes] = useState<string[]>(quotesData);
 
-  const handleRandomPoster = () => {
-    setImageIndex(getRandomNumber(images));
-    setTitlesIndex(getRandomNumber(titles));
-    setQuotesIndex(getRandomNumber(quotes));
+  const handleRandomIndex = () => {
+    const posterImg = getRandomNumber(images);
+    const posterTitle = getRandomNumber(titles);
+    const posterQuote = getRandomNumber(quotes);
+
+    return { posterImg, posterTitle, posterQuote };
   };
 
   return (
     <section className="text-center ">
       <Poster
-        imageIndex={imageIndex}
-        titlesIndex={titlesIndex}
-        quotesIndex={quotesIndex}
+        images={images}
+        titles={titles}
+        quotes={quotes}
+        handleRandomIndex={handleRandomIndex}
       />
-      <PosterNavigation handleRandomPoster={handleRandomPoster} />
+
+      {/* <PosterNavigation handleRandomPoster={handleRandomPoster} /> */}
     </section>
   );
 };

@@ -8,8 +8,8 @@ function App() {
     <main className="h-screen overflow-hidden bg-slate-200 font-serif">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="form" element={<CreatePoster />} />
-        <Route path="/saved" element={<SavedPosters />} />
+        {/* <Route path="form" element={<CreatePoster />} />
+        <Route path="/saved" element={<SavedPosters />} /> */}
       </Routes>
     </main>
   );
