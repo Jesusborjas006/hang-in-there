@@ -2,16 +2,16 @@ import { useNavigate } from "react-router-dom";
 import Form from "../components/Form";
 
 interface CreatePosterProps {
-  addImage: (newImage: string) => void;
-  addTitle: (newTitle: string) => void;
-  addQuote: (newQuote: string) => void;
+  addPosterContent: (
+    newImage: string,
+    newTitle: string,
+    newQuote: string
+  ) => void;
   displayNewTitle: () => void;
 }
 
 const CreatePoster = ({
-  addImage,
-  addTitle,
-  addQuote,
+  addPosterContent,
   displayNewTitle,
 }: CreatePosterProps) => {
   const navigate = useNavigate();
@@ -22,9 +22,7 @@ const CreatePoster = ({
         Create your own motivational poster
       </h3>
       <Form
-        addImage={addImage}
-        addTitle={addTitle}
-        addQuote={addQuote}
+        addPosterContent={addPosterContent}
         displayNewTitle={displayNewTitle}
       />
 

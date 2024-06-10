@@ -24,15 +24,13 @@ function App() {
     });
   };
 
-  const addImage = (newImage: string) => {
+  const addPosterContent = (
+    newImage: string,
+    newTitle: string,
+    newQuote: string
+  ) => {
     setImages([...images, newImage]);
-  };
-
-  const addTitle = (newTitle: string) => {
     setTitles([...titles, newTitle]);
-  };
-
-  const addQuote = (newQuote: string) => {
     setQuotes([...quotes, newQuote]);
   };
 
@@ -63,9 +61,7 @@ function App() {
           path="/form"
           element={
             <CreatePoster
-              addImage={addImage}
-              addTitle={addTitle}
-              addQuote={addQuote}
+              addPosterContent={addPosterContent}
               displayNewTitle={displayNewTitle}
             />
           }
