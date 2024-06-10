@@ -9,7 +9,7 @@ const Form = () => {
 
       <button
         onClick={() => navigate(-1)}
-        className="bg-black text-white py-2 px-4 rounded-md"
+        className="bg-black text-white py-2 px-4 rounded-md hover:bg-purple-900"
       >
         Nevermind, take me back!
       </button>

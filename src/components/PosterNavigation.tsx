@@ -7,12 +7,12 @@ interface PosterNavigationProps {
 
 const PosterNavigation = ({ handleRandomPoster }: PosterNavigationProps) => {
   return (
-    <nav>
+    <nav className="mt-10 space-x-4">
       <Link to="/saved">
         <Button>View Saved Posters</Button>
       </Link>
       <button
-        className="bg-black text-white py-2 px-4 rounded-md mt-10"
+        className="bg-black text-white py-2 px-4 rounded-md hover:bg-purple-900"
         onClick={handleRandomPoster}
       >
         Show Random Poster
