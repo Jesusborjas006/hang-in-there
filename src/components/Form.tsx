@@ -2,29 +2,20 @@ import { MouseEvent, useState } from "react";
 import { Poster } from "../types";
 import { useNavigate } from "react-router-dom";
 
-const Form = () => {
+interface FormProps {
+  addPoster: (addPoster: Poster) => void;
+}
+
+const Form = ({ addPoster }: FormProps) => {
   const navigate = useNavigate();
-  const [posters, setPosters] = useState([
-    {
-      id: 1,
-      imgUrl: "idk",
-      title: "Ted Lasso",
-      quote: "Never Quit!",
-    },
-  ]);
   const [poster, setPoster] = useState({
     imgUrl: "",
     title: "",
     quote: "",
   });
-  // console.log(posters);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPoster({ ...poster, [e.target.name]: e.target.value });
-  };
-
-  const addPoster = (newPoster: Poster) => {
-    setPosters([...posters, newPoster]);
   };
 
   const submitPoster = (
@@ -41,8 +32,8 @@ const Form = () => {
       };
 
       addPoster(newPoster);
-      setPoster({ ...poster, imgUrl: "", title: "", quote: "" });
-      // navigate("/");
+      setPoster({ imgUrl: "", title: "", quote: "" });
+      navigate("/");
     }
   };
 

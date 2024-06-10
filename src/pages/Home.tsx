@@ -8,7 +8,6 @@ const Home = () => {
   const [images, setImages] = useState<string[]>(imagesData);
   const [titles, setTitles] = useState<string[]>(titlesData);
   const [quotes, setQuotes] = useState<string[]>(quotesData);
-
   const [indices, setIndices] = useState({
     imgIndex: getRandomNumber(images),
     titleIndex: getRandomNumber(titles),
