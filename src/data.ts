@@ -1,4 +1,4 @@
-const images = [
+const imagesData = [
   "./assets/bees.jpg",
   "./assets/bridge.jpg",
   "./assets/butterfly.jpg",
@@ -18,7 +18,7 @@ const images = [
   "./assets/tiger.jpg",
   "./assets/turtle.jpg",
 ];
-const titles = [
+const titlesData = [
   "determination",
   "success",
   "inspiration",
@@ -55,7 +55,7 @@ const titles = [
   "understanding",
   "wisdom",
 ];
-const quotes = [
+const quotesData = [
   "Don’t downgrade your dream just to fit your reality, upgrade your conviction to match your destiny.",
   "You are braver than you believe, stronger than you seem and smarter than you think.",
   "You are confined only by the walls you build yourself.",
@@ -96,4 +96,4 @@ const quotes = [
   "A champion is defined not by their wins but by how they can recover when they fall.",
 ];
 
-export { images, titles, quotes };
+export { imagesData, titlesData, quotesData };
