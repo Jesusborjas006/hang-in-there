@@ -1,12 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import Form from "../components/Form";
-import { Poster } from "../types";
 
 interface CreatePosterProps {
-  addPoster: (addPoster: Poster) => void;
+  addImage: (newImage: string) => void;
+  addTitle: (newTitle: string) => void;
+  addQuote: (newQuote: string) => void;
+  displayNewTitle: () => void;
 }
 
-const CreatePoster = ({ addPoster }: CreatePosterProps) => {
+const CreatePoster = ({
+  addImage,
+  addTitle,
+  addQuote,
+  displayNewTitle,
+}: CreatePosterProps) => {
   const navigate = useNavigate();
 
   return (
@@ -14,7 +21,12 @@ const CreatePoster = ({ addPoster }: CreatePosterProps) => {
       <h3 className="text-2xl font-semibold">
         Create your own motivational poster
       </h3>
-      <Form addPoster={addPoster} />
+      <Form
+        addImage={addImage}
+        addTitle={addTitle}
+        addQuote={addQuote}
+        displayNewTitle={displayNewTitle}
+      />
 
       <hr className="my-10 py-[.5px] bg-black w-[50%] mx-auto" />
       <button

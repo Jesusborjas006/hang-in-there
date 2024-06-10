@@ -1,12 +1,14 @@
 import { MouseEvent, useState } from "react";
-import { Poster } from "../types";
 import { useNavigate } from "react-router-dom";
 
 interface FormProps {
-  addPoster: (addPoster: Poster) => void;
+  addImage: (newImage: string) => void;
+  addTitle: (newTitle: string) => void;
+  addQuote: (newQuote: string) => void;
+  displayNewTitle: () => void;
 }
 
-const Form = ({ addPoster }: FormProps) => {
+const Form = ({ addImage, addTitle, addQuote, displayNewTitle }: FormProps) => {
   const navigate = useNavigate();
   const [poster, setPoster] = useState({
     imgUrl: "",
@@ -24,14 +26,10 @@ const Form = ({ addPoster }: FormProps) => {
     e.preventDefault();
 
     if (poster.imgUrl && poster.title && poster.quote) {
-      const newPoster = {
-        id: Date.now(),
-        imgUrl: poster.imgUrl,
-        title: poster.title,
-        quote: poster.quote,
-      };
-
-      addPoster(newPoster);
+      addImage(poster.imgUrl);
+      addTitle(poster.title);
+      addQuote(poster.quote);
+      displayNewTitle();
       setPoster({ imgUrl: "", title: "", quote: "" });
       navigate("/");
     }

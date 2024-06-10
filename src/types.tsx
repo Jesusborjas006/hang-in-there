@@ -1,4 +1,4 @@
-export type Poster = {
+export type PosterType = {
   id: number;
   imgUrl: string;
   title: string;
