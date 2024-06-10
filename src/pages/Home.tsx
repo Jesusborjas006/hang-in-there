@@ -2,6 +2,7 @@ import { useState } from "react";
 import Poster from "../components/Poster";
 import { getRandomNumber } from "../utils";
 import { images, titles, quotes } from "../data";
+import PosterNavigation from "../components/PosterNavigation";
 
 const Home = () => {
   const [imageIndex, setImageIndex] = useState(getRandomNumber(images));
@@ -21,12 +22,7 @@ const Home = () => {
         titlesIndex={titlesIndex}
         quotesIndex={quotesIndex}
       />
-      <button
-        className="bg-black text-white py-2 px-4 rounded-md mt-10"
-        onClick={handleRandomPoster}
-      >
-        Show Random Poster
-      </button>
+      <PosterNavigation handleRandomPoster={handleRandomPoster} />
     </section>
   );
 };
