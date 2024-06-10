@@ -16,14 +16,6 @@ function App() {
     quoteIndex: getRandomNumber(quotes),
   });
 
-  const handleRandomIndex = () => {
-    setIndices({
-      imgIndex: getRandomNumber(images),
-      titleIndex: getRandomNumber(titles),
-      quoteIndex: getRandomNumber(quotes),
-    });
-  };
-
   const addPosterContent = (
     newImage: string,
     newTitle: string,
@@ -53,7 +45,7 @@ function App() {
               images={images}
               quotes={quotes}
               indices={indices}
-              handleRandomIndex={handleRandomIndex}
+              setIndices={setIndices}
             />
           }
         />

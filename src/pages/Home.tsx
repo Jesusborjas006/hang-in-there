@@ -1,5 +1,6 @@
 import Poster from "../components/Poster";
 import PosterNavigation from "../components/PosterNavigation";
+import { getRandomNumber } from "../utils";
 
 interface HomeProps {
   images: string[];
@@ -10,16 +11,23 @@ interface HomeProps {
     titleIndex: number;
     quoteIndex: number;
   };
-  handleRandomIndex: () => void;
+  setIndices: React.Dispatch<
+    React.SetStateAction<{
+      imgIndex: number;
+      titleIndex: number;
+      quoteIndex: number;
+    }>
+  >;
 }
 
-const Home = ({
-  images,
-  titles,
-  quotes,
-  indices,
-  handleRandomIndex,
-}: HomeProps) => {
+const Home = ({ images, titles, quotes, indices, setIndices }: HomeProps) => {
+  const handleRandomIndex = () => {
+    setIndices({
+      imgIndex: getRandomNumber(images),
+      titleIndex: getRandomNumber(titles),
+      quoteIndex: getRandomNumber(quotes),
+    });
+  };
   return (
     <section className="text-center ">
       <Poster
