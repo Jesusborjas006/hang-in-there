@@ -9,12 +9,18 @@ const Home = () => {
   const [titles, setTitles] = useState<string[]>(titlesData);
   const [quotes, setQuotes] = useState<string[]>(quotesData);
 
-  const handleRandomIndex = () => {
-    const posterImg = getRandomNumber(images);
-    const posterTitle = getRandomNumber(titles);
-    const posterQuote = getRandomNumber(quotes);
+  const [indices, setIndices] = useState({
+    imgIndex: getRandomNumber(images),
+    titleIndex: getRandomNumber(titles),
+    quoteIndex: getRandomNumber(quotes),
+  });
 
-    return { posterImg, posterTitle, posterQuote };
+  const handleRandomIndex = () => {
+    setIndices({
+      imgIndex: getRandomNumber(images),
+      titleIndex: getRandomNumber(titles),
+      quoteIndex: getRandomNumber(quotes),
+    });
   };
 
   return (
@@ -23,10 +29,10 @@ const Home = () => {
         images={images}
         titles={titles}
         quotes={quotes}
-        handleRandomIndex={handleRandomIndex}
+        indices={indices}
       />
 
-      {/* <PosterNavigation handleRandomPoster={handleRandomPoster} /> */}
+      <PosterNavigation handleRandomIndex={handleRandomIndex} />
     </section>
   );
 };

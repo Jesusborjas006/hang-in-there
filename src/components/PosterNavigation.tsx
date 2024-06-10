@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import Button from "./Button";
 
 interface PosterNavigationProps {
-  handleRandomPoster: () => void;
+  handleRandomIndex: () => void;
 }
 
-const PosterNavigation = ({ handleRandomPoster }: PosterNavigationProps) => {
+const PosterNavigation = ({ handleRandomIndex }: PosterNavigationProps) => {
   return (
     <nav className="mt-10 space-x-4">
       <Link to="/saved">
@@ -13,7 +13,7 @@ const PosterNavigation = ({ handleRandomPoster }: PosterNavigationProps) => {
       </Link>
       <button
         className="bg-black text-white py-2 px-4 rounded-md hover:bg-purple-900"
-        onClick={handleRandomPoster}
+        onClick={handleRandomIndex}
       >
         Show Random Poster
       </button>
