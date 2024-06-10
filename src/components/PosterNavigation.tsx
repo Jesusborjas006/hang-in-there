@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Button from "./Button";
 
 interface PosterNavigationProps {
   handleRandomPoster: () => void;
@@ -6,11 +7,9 @@ interface PosterNavigationProps {
 
 const PosterNavigation = ({ handleRandomPoster }: PosterNavigationProps) => {
   return (
-    <div>
+    <nav>
       <Link to="/saved">
-        <button className="bg-black text-white py-2 px-4 rounded-md">
-          View Saved Posters
-        </button>
+        <Button>View Saved Posters</Button>
       </Link>
       <button
         className="bg-black text-white py-2 px-4 rounded-md mt-10"
@@ -19,11 +18,9 @@ const PosterNavigation = ({ handleRandomPoster }: PosterNavigationProps) => {
         Show Random Poster
       </button>
       <Link to="/form">
-        <button className="bg-black text-white py-2 px-4 rounded-md">
-          Make Your Own Poster
-        </button>
+        <Button>Make Your Own Poster</Button>
       </Link>
-    </div>
+    </nav>
   );
 };
 

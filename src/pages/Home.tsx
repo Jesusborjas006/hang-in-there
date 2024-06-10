@@ -2,7 +2,6 @@ import { useState } from "react";
 import Poster from "../components/Poster";
 import { getRandomNumber } from "../utils";
 import { images, titles, quotes } from "../data";
-import { Link } from "react-router-dom";
 import PosterNavigation from "../components/PosterNavigation";
 
 const Home = () => {
