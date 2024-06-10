@@ -15,6 +15,10 @@ function App() {
     titleIndex: getRandomNumber(titles),
     quoteIndex: getRandomNumber(quotes),
   });
+  const [savedPosters, setSavedPosters] = useState<
+    [] | { id: number; imgUrl: string; title: string; quote: string }[]
+  >([]);
+  console.log(savedPosters);
 
   const addPosterContent = (
     newImage: string,
@@ -34,6 +38,18 @@ function App() {
     });
   };
 
+  const addToSavedPosters = () => {
+    setSavedPosters([
+      ...savedPosters,
+      {
+        id: Date.now(),
+        imgUrl: images[indices.imgIndex],
+        title: titles[indices.titleIndex],
+        quote: quotes[indices.quoteIndex],
+      },
+    ]);
+  };
+
   return (
     <main className="h-screen overflow-hidden bg-slate-200 font-serif">
       <Routes>
@@ -46,6 +62,7 @@ function App() {
               quotes={quotes}
               indices={indices}
               setIndices={setIndices}
+              addToSavedPosters={addToSavedPosters}
             />
           }
         />
