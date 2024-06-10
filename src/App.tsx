@@ -39,15 +39,29 @@ function App() {
   };
 
   const addToSavedPosters = () => {
-    setSavedPosters([
-      ...savedPosters,
-      {
-        id: Date.now(),
-        imgUrl: images[indices.imgIndex],
-        title: titles[indices.titleIndex],
-        quote: quotes[indices.quoteIndex],
-      },
-    ]);
+    const newSavedPoster = {
+      imgUrl: images[indices.imgIndex],
+      title: titles[indices.titleIndex],
+      quote: quotes[indices.quoteIndex],
+    };
+
+    const isPosterSaved = savedPosters.some((poster) => {
+      return (
+        poster.imgUrl === newSavedPoster.imgUrl &&
+        poster.title === newSavedPoster.title &&
+        poster.quote === newSavedPoster.quote
+      );
+    });
+
+    if (!isPosterSaved) {
+      setSavedPosters([
+        ...savedPosters,
+        {
+          ...newSavedPoster,
+          id: Date.now(),
+        },
+      ]);
+    }
   };
 
   return (
