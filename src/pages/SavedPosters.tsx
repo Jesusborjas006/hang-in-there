@@ -44,11 +44,15 @@ const SavedPosters = ({
 
   return (
     <section className="text-center">
-      <h3 className="text-xl mb-6">Saved Posters</h3>
+      <h3 className="text-xl mb-6 font-semibold">Saved Posters</h3>
 
-      <div className="grid grid-cols-3 px-6 gap-6 max-w-[1650px] mx-auto ">
-        {savedPosterElements}
-      </div>
+      {savedPosters.length > 0 ? (
+        <div className="grid grid-cols-3 px-6 gap-6 max-w-[1650px] mx-auto text-center">
+          {savedPosterElements}
+        </div>
+      ) : (
+        <p className="my-20 text-lg">No Saved Posters</p>
+      )}
 
       <button
         className="bg-black text-white py-2 px-4 rounded-md hover:bg-purple-900 my-10"
