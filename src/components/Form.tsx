@@ -18,6 +18,8 @@ const Form = ({ addPosterContent, displayNewTitle }: FormProps) => {
     quote: "",
   });
 
+  const condition = poster.imgUrl && poster.title && poster.quote;
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPoster({ ...poster, [e.target.name]: e.target.value });
   };
@@ -27,7 +29,7 @@ const Form = ({ addPosterContent, displayNewTitle }: FormProps) => {
   ) => {
     e.preventDefault();
 
-    if (poster.imgUrl && poster.title && poster.quote) {
+    if (condition) {
       addPosterContent(poster.imgUrl, poster.title, poster.quote);
       displayNewTitle();
       setPoster({ imgUrl: "", title: "", quote: "" });
@@ -74,8 +76,13 @@ const Form = ({ addPosterContent, displayNewTitle }: FormProps) => {
       />
 
       <button
-        className="mt-8 bg-black text-white py-2 px-4 rounded-md hover:bg-purple-900 w-fit mx-auto"
+        className={`mt-8 py-2 px-4 rounded-md w-fit mx-auto ${
+          condition
+            ? "cursor-pointer bg-black text-white hover:bg-purple-900"
+            : "bg-[#ccc] text-[#666] cursor-not-allowed"
+        }`}
         onClick={(e) => submitPoster(e)}
+        disabled={!condition}
       >
         Show my poster
       </button>
