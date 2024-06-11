@@ -64,6 +64,14 @@ function App() {
     }
   };
 
+  const removeSavedPoster = (id: number) => {
+    const updatedSavedPoster = savedPosters.filter((poster) => {
+      return poster.id !== id;
+    });
+
+    setSavedPosters(updatedSavedPoster);
+  };
+
   return (
     <main className="pt-10">
       <Routes>
@@ -91,7 +99,12 @@ function App() {
         />
         <Route
           path="/saved"
-          element={<SavedPosters savedPosters={savedPosters} />}
+          element={
+            <SavedPosters
+              savedPosters={savedPosters}
+              removeSavedPoster={removeSavedPoster}
+            />
+          }
         />
       </Routes>
     </main>
