@@ -3,11 +3,21 @@ import Button from "./Button";
 
 interface PosterNavigationProps {
   handleRandomIndex: () => void;
+  addToSavedPosters: () => void;
 }
 
-const PosterNavigation = ({ handleRandomIndex }: PosterNavigationProps) => {
+const PosterNavigation = ({
+  handleRandomIndex,
+  addToSavedPosters,
+}: PosterNavigationProps) => {
   return (
     <nav className="mt-10 space-x-4">
+      <button
+        className="bg-black text-white py-2 px-4 rounded-md hover:bg-purple-900"
+        onClick={addToSavedPosters}
+      >
+        Save This Poster
+      </button>
       <Link to="/saved">
         <Button>View Saved Posters</Button>
       </Link>

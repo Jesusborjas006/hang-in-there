@@ -18,9 +18,17 @@ interface HomeProps {
       quoteIndex: number;
     }>
   >;
+  addToSavedPosters: () => void;
 }
 
-const Home = ({ images, titles, quotes, indices, setIndices }: HomeProps) => {
+const Home = ({
+  images,
+  titles,
+  quotes,
+  indices,
+  setIndices,
+  addToSavedPosters,
+}: HomeProps) => {
   const handleRandomIndex = () => {
     setIndices({
       imgIndex: getRandomNumber(images),
@@ -37,7 +45,10 @@ const Home = ({ images, titles, quotes, indices, setIndices }: HomeProps) => {
         indices={indices}
       />
 
-      <PosterNavigation handleRandomIndex={handleRandomIndex} />
+      <PosterNavigation
+        handleRandomIndex={handleRandomIndex}
+        addToSavedPosters={addToSavedPosters}
+      />
     </section>
   );
 };
