@@ -65,7 +65,7 @@ function App() {
   };
 
   return (
-    <main className="h-screen overflow-hidden bg-slate-200 font-serif">
+    <main className="pt-10">
       <Routes>
         <Route
           path="/"
@@ -89,7 +89,10 @@ function App() {
             />
           }
         />
-        <Route path="/saved" element={<SavedPosters />} />
+        <Route
+          path="/saved"
+          element={<SavedPosters savedPosters={savedPosters} />}
+        />
       </Routes>
     </main>
   );
