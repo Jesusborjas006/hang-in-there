@@ -14,7 +14,7 @@ const Poster = ({ images, titles, quotes, indices }: PosterProps) => {
   if (images[indices.imgIndex].slice(0, 4) === "http") {
     imgContent = images[indices.imgIndex];
   } else {
-    imgContent = "src/" + images[indices.imgIndex];
+    imgContent = "/" + images[indices.imgIndex];
   }
 
   return (

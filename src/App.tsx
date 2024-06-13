@@ -18,7 +18,6 @@ function App() {
   const [savedPosters, setSavedPosters] = useState<
     [] | { id: number; imgUrl: string; title: string; quote: string }[]
   >([]);
-  console.log(savedPosters);
 
   const addPosterContent = (
     newImage: string,

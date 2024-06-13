@@ -25,7 +25,11 @@ const SavedPosters = ({
     >
       <img
         className="w-[60%] object-cover mx-auto border-white border-2"
-        src={"src/" + poster.imgUrl}
+        src={
+          poster.imgUrl.slice(0, 4) === "http"
+            ? poster.imgUrl
+            : "/" + poster.imgUrl
+        }
         alt="Random Picture"
       />
       <h1 className="text-xl font-semibold mt-2 uppercase">{poster.title}</h1>
