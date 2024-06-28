@@ -51,7 +51,7 @@ const SavedPosters = ({
       <h3 className="text-xl mb-6 font-semibold">Saved Posters</h3>
 
       {savedPosters.length > 0 ? (
-        <div className="grid grid-cols-3 px-6 gap-6 max-w-[1650px] mx-auto text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-4 gap-4 max-w-[1650px] mx-auto text-center">
           {savedPosterElements}
         </div>
       ) : (
