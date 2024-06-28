@@ -38,7 +38,7 @@ const Form = ({ addPosterContent, displayNewTitle }: FormProps) => {
   };
 
   return (
-    <form className="flex flex-col w-[500px] mx-auto">
+    <form className="flex flex-col mx-auto">
       <label className="mt-10 mb-1" htmlFor="img-url">
         Image URL
       </label>
