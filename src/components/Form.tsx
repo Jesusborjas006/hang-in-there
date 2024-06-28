@@ -78,7 +78,7 @@ const Form = ({ addPosterContent, displayNewTitle }: FormProps) => {
       <button
         className={`mt-8 py-2 px-4 rounded-md w-fit mx-auto ${
           condition
-            ? "cursor-pointer bg-black text-white hover-hover:bg-purple-900"
+            ? "cursor-pointer bg-black text-white hover:bg-purple-900"
             : "bg-[#ccc] text-[#666] cursor-not-allowed"
         }`}
         onClick={(e) => submitPoster(e)}
