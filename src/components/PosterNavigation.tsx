@@ -13,7 +13,7 @@ const PosterNavigation = ({
   return (
     <nav className="mt-8 flex flex-col gap-3 sm:flex-row justify-center">
       <button
-        className="bg-black text-white py-2 px-4 rounded-md hover:bg-purple-900"
+        className="bg-black text-white py-2 px-4 rounded-md hover-hover:bg-purple-900"
         onClick={addToSavedPosters}
       >
         Save This Poster
@@ -22,7 +22,7 @@ const PosterNavigation = ({
         <Button>View Saved Posters</Button>
       </Link>
       <button
-        className="bg-black text-white py-2 px-4 rounded-md hover:bg-purple-900"
+        className="bg-black text-white py-2 px-4 rounded-md hover-hover:bg-purple-900"
         onClick={handleRandomIndex}
       >
         Show Random Poster
