@@ -17,7 +17,7 @@ const CreatePoster = ({
   const navigate = useNavigate();
 
   return (
-    <section className="text-center mt-20">
+    <section className="text-center mt-20 w-fit mx-auto px-6">
       <h3 className="text-2xl font-semibold">
         Create your own motivational poster
       </h3>

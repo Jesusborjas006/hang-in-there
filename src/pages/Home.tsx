@@ -37,7 +37,7 @@ const Home = ({
     });
   };
   return (
-    <section className="text-center ">
+    <section className="text-center px-6">
       <Poster
         images={images}
         titles={titles}
